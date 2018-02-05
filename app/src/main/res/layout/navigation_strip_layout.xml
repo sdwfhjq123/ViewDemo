@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:layout_alignParentBottom="true">
+
+    <LinearLayout
+        android:id="@+id/navigation_strip_ll"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                style="@style/NavigationItemImageView"
+                android:src="@drawable/emoji_1" />
+
+            <TextView
+                style="@style/NavigationItemTextView"
+                android:text="暂定" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                style="@style/NavigationItemImageView"
+                android:src="@drawable/emoji_1" />
+
+            <TextView
+                style="@style/NavigationItemTextView"
+                android:text="暂定" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                style="@style/NavigationItemImageView"
+                android:src="@drawable/emoji_1" />
+
+            <TextView
+                style="@style/NavigationItemTextView"
+                android:text="暂定" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                style="@style/NavigationItemImageView"
+                android:src="@drawable/emoji_1" />
+
+            <TextView
+                style="@style/NavigationItemTextView"
+                android:text="暂定" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
