@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -33,8 +34,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "HomeFragment";
 
     private ViewPager mViewPager;
-    private FrameLayout mClick1, mClick2, mCenterClick, mClick4, mClick5;
-    private TextView mTextView1, mTextView2, mCenterTextView, mTextView4, mTextView5;
+    private RadioButton mClick1, mClick2, mCenterClick, mClick4, mClick5;
 
     private FragmentPagerAdapter mFragmentPagerAdapter;//将tab页面持久在内存中
     private List<Fragment> mFragmentList = new ArrayList<>();
@@ -107,21 +107,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
      */
     @SuppressLint("ResourceAsColor")
     private void judgeBoolean(Boolean f1, Boolean f2, Boolean f3, Boolean f4, Boolean f5) {
-        mTextView1.setTextColor(f1 ? R.color.colorSelected : R.color.colorUnselected);
-        mTextView2.setTextColor(f2 ? R.color.colorSelected : R.color.colorUnselected);
-        mCenterTextView.setTextColor(f3 ? R.color.colorSelected : R.color.colorUnselected);
-        mTextView4.setTextColor(f4 ? R.color.colorSelected : R.color.colorUnselected);
-        mTextView5.setTextColor(f5 ? R.color.colorSelected : R.color.colorUnselected);
-        Log.e(TAG, "judgeBoolean: " + f1 + f2 + f3 + f4 + f5);
+        mClick1.setChecked(f1);
+        mClick2.setChecked(f2);
+        mCenterClick.setChecked(f3);
+        mClick4.setChecked(f4);
+        mClick5.setChecked(f5);
     }
 
     private void initView(View view) {
         mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
-        mClick1 = (FrameLayout) view.findViewById(R.id.one_click);
-        mClick2 = (FrameLayout) view.findViewById(R.id.two_click);
-        mCenterClick = (FrameLayout) view.findViewById(R.id.center_click);
-        mClick4 = (FrameLayout) view.findViewById(R.id.four_click);
-        mClick5 = (FrameLayout) view.findViewById(R.id.five_click);
+        mClick1 = (RadioButton) view.findViewById(R.id.one_click);
+        mClick2 = (RadioButton) view.findViewById(R.id.two_click);
+        mCenterClick = (RadioButton) view.findViewById(R.id.center_click);
+        mClick4 = (RadioButton) view.findViewById(R.id.four_click);
+        mClick5 = (RadioButton) view.findViewById(R.id.five_click);
 
         mClick1.setOnClickListener(this);
         mClick2.setOnClickListener(this);
@@ -129,11 +128,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mClick4.setOnClickListener(this);
         mClick5.setOnClickListener(this);
 
-        mTextView1 = (TextView) view.findViewById(R.id.one_text);
-        mTextView2 = (TextView) view.findViewById(R.id.two_text);
-        mCenterTextView = (TextView) view.findViewById(R.id.center_text);
-        mTextView4 = (TextView) view.findViewById(R.id.four_text);
-        mTextView5 = (TextView) view.findViewById(R.id.five_text);
     }
 
     /**

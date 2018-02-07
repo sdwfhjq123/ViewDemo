@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 
 /**
  * Created by hp on 2018/2/6.
+ * 禁止滑动的viewpager，滑动效果待优化
  */
 
 public class NoScrollViewPager extends ViewPager {

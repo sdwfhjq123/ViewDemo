@@ -15,7 +15,7 @@ import java.util.Map;
 public class Fragment1Factory {
     private static Map<Integer, BaseFragment> mBaseFragments = new HashMap<>();
 
-    static BaseFragment createFragment(int pos) {
+    public static BaseFragment createFragment(int pos) {
 
         BaseFragment baseFragment = mBaseFragments.get(pos);
 

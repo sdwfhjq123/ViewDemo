@@ -13,7 +13,7 @@ import com.yinhao.viewdemo.R;
  * Created by hp on 2018/2/6.
  */
 
-public class FragmentCenter extends Fragment {
+public class FragmentCenter extends TabFragment {
 
     public static FragmentCenter instance = null;//单例模式
 
@@ -24,12 +24,8 @@ public class FragmentCenter extends Fragment {
         return instance;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_center, container, false);
-
-        return view;
+    public String[] setTabNames() {
+        return new String[0];
     }
 }

@@ -1,112 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="75dp"
-    android:layout_alignParentBottom="true">
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:clipChildren="false"
+    android:gravity="bottom"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/navigation_strip_ll"
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
+        android:gravity="center"
         android:orientation="horizontal">
 
-        <FrameLayout
+        <RadioButton
             android:id="@+id/one_click"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            style="@style/MainActivityRaodioButtonStyle"
+            android:checked="true"
+            android:drawableTop="@drawable/emoji_3"
+            android:text="1" />
 
-
-            <ImageView
-                style="@style/NavigationItemImageView"
-                android:src="@drawable/emoji_1" />
-
-            <TextView
-                android:id="@+id/one_text"
-                style="@style/NavigationItemTextView"
-                android:text="暂定" />
-        </FrameLayout>
-
-        <FrameLayout
+        <RadioButton
             android:id="@+id/two_click"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            style="@style/MainActivityRaodioButtonStyle"
+            android:drawableTop="@drawable/emoji_2"
+            android:text="2" />
 
-            <ImageView
-                style="@style/NavigationItemImageView"
-                android:src="@drawable/emoji_2" />
+        <RadioButton
+            android:id="@+id/center_click"
+            style="@style/MainActivityRaodioButtonStyle"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            android:drawableTop="@drawable/emoji_center"
+            android:text="center" />
 
-            <TextView
-                android:id="@+id/two_text"
-                style="@style/NavigationItemTextView"
-                android:text="暂定" />
-
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-        </FrameLayout>
-
-        <FrameLayout
+        <RadioButton
             android:id="@+id/four_click"
+            style="@style/MainActivityRaodioButtonStyle"
+            android:drawableTop="@drawable/emoji_3"
+            android:text="4" />
 
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                style="@style/NavigationItemImageView"
-                android:src="@drawable/emoji_4" />
-
-            <TextView
-                android:id="@+id/four_text"
-                style="@style/NavigationItemTextView"
-                android:text="暂定" />
-
-        </FrameLayout>
-
-        <FrameLayout
+        <RadioButton
             android:id="@+id/five_click"
-
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                style="@style/NavigationItemImageView"
-                android:src="@drawable/emoji_5" />
-
-            <TextView
-                android:id="@+id/five_text"
-                style="@style/NavigationItemTextView"
-                android:text="暂定" />
-
-        </FrameLayout>
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/center_click"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom">
-
-        <ImageView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginBottom="15dp"
-            android:src="@drawable/emoji_3" />
-
-        <TextView
-            android:id="@+id/center_text"
-            style="@style/NavigationItemTextView"
-            android:text="暂定" />
-    </FrameLayout>
+            style="@style/MainActivityRaodioButtonStyle"
+            android:drawableTop="@drawable/emoji_4"
+            android:text="5" />
+    </RadioGroup>
 
 </FrameLayout>
