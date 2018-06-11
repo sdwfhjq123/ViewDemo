@@ -1,10 +1,11 @@
-package com.yinhao.viewdemo;
+package com.yinhao.viewdemo.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
@@ -17,8 +18,11 @@ import android.widget.ImageView;
  */
 
 @SuppressLint("AppCompatCustomView")
-public class CircleView extends View {
+public class CircleView extends ImageView {
 
+
+    private int mWidth;
+    private int mHeight;
 
     public CircleView(Context context) {
         this(context, null);
@@ -32,13 +36,18 @@ public class CircleView extends View {
         super(context, attrs, defStyleAttr);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        mWidth = getMeasuredWidth();
+        mHeight = getMeasuredHeight();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.RED);
+
 //        paint.setStyle(Paint.Style.STROKE);
 //        paint.setStrokeWidth(30);
 //
@@ -57,17 +66,20 @@ public class CircleView extends View {
 //        canvas.drawPoints(points, 2 /* 跳过两个数，即前两个 0 */,
         //    8 /* 一共绘制 8 个数（4 个点）*/, paint);
 
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawOval(50, 50, 350, 200, paint);
+//        paint.setStyle(Paint.Style.FILL);
+//        canvas.drawOval(50, 50, 350, 200, paint);
+//
+//        paint.setStyle(Paint.Style.STROKE);
+//        canvas.drawOval(400, 50, 700, 200, paint);
+//
+//        canvas.drawLine(200, 200, 800, 500, paint);
+//
+//        canvas.drawRoundRect(100, 100, 500, 300, 50, 50, paint);
 
-        paint.setStyle(Paint.Style.STROKE);
-        canvas.drawOval(400, 50, 700, 200, paint);
 
-        canvas.drawLine(200, 200, 800, 500, paint);
-
-        canvas.drawRoundRect(100, 100, 500, 300, 50, 50, paint);
-
-
+//        canvas.drawArc(200, 100, 800, 500, -110, 100, true, paint); // 绘制扇形
+//        canvas.drawArc(200, 100, 800, 500, 20, 140, false, paint); // 绘制弧形
+//        paint.setStyle(Paint.Style.STROKE); // 画线模式
         /**
          * drawArc() 是使用一个椭圆来描述弧形的。
          * left, top, right, bottom 描述的是这个弧形所在的椭圆；
@@ -75,11 +87,15 @@ public class CircleView extends View {
          * sweepAngle 是弧形划过的角度；
          * useCenter 表示是否连接到圆心，如果不连接到圆心，就是弧形，如果连接到圆心，就是扇形
          */
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.FILL); // 填充模式
-        canvas.drawArc(200, 100, 800, 500, -110, 100, true, paint); // 绘制扇形
-        canvas.drawArc(200, 100, 800, 500, 20, 140, false, paint); // 绘制弧形
-        paint.setStyle(Paint.Style.STROKE); // 画线模式
-        canvas.drawArc(200, 100, 800, 500, 180, 60, false, paint); // 绘制不封口的弧形
-
+//        canvas.drawArc(0, mHeight - 100, mWidth, mHeight + 100, 0, -180, false, paint); // 绘制不封口的弧形
+        Path path = new Path();
+        path.moveTo(0, mHeight);
+        path.quadTo(mWidth / 2, mHeight - 150, mWidth, mHeight);
+        path.close();
+        canvas.drawPath(path, paint);
     }
+
 }

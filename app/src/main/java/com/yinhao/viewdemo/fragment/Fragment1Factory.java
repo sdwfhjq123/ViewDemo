@@ -4,6 +4,7 @@ import com.yinhao.viewdemo.fragment.fragment1.Fragment11;
 import com.yinhao.viewdemo.fragment.fragment1.Fragment12;
 import com.yinhao.viewdemo.fragment.fragment1.Fragment13;
 import com.yinhao.viewdemo.fragment.fragment1.Fragment14;
+import com.yinhao.viewdemo.fragment.fragment1.Fragment15;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +33,9 @@ public class Fragment1Factory {
                     break;
                 case 3:
                     baseFragment = new Fragment14();
+                    break;
+                case 4:
+                    baseFragment = new Fragment15();
                     break;
             }
 

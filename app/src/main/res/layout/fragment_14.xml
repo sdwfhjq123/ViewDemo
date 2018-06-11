@@ -2,7 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f0f"
     android:orientation="vertical">
 
+    <com.yinhao.viewdemo.view.BeforeOnDrawView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/about_hencoder"
+        android:textSize="16dp" />
 </LinearLayout>
