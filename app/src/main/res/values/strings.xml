@@ -1,5 +1,5 @@
 <resources>
-        <string name="app_name">VIewDemo</string>
+        <string name="app_name">ViewDemo</string>
         <string name="title_after_on_draw">onDraw()-后插</string>
         <string name="title_before_on_draw">onDraw()-前插</string>
         <string name="title_on_draw_layout">onDraw()-在 Layout 中</string>
