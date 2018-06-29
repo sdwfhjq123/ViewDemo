@@ -8,4 +8,7 @@
         <item>e</item>
         <item>侧部字母导航条</item>
     </string-array>
+    <string-array name="tab_f2_names">
+        <item>CircleView</item>
+    </string-array>
 </resources>

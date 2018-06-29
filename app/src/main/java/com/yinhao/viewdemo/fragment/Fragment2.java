@@ -26,6 +26,6 @@ public class Fragment2 extends TabFragment {
 
     @Override
     public String[] setTabNames() {
-        return new String[0];
+        return getResources().getStringArray(R.array.tab_f2_names);
     }
 }
